@@ -1,0 +1,28 @@
+html,
+body {
+height: 100%;
+background-color: #f6f8f8;
+font-family: Helvetica, Arial, sans-serif
+}
+
+.container {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+}
+
+#magnetInput {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+#linkText {
+    font-size: 10vh; 
+    transform: rotate(90deg);
+    color: black
+}
