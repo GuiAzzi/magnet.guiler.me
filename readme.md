@@ -1,6 +1,6 @@
 # How to use
 
-Go to http://guiler.me?uri=[magnet-link]
+Go to http://magnet.guiler.me?uri=[magnet-link]
 
 :)
 
