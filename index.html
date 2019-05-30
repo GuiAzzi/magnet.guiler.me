@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <link rel="stylesheet" href="/style.css">
     <title>guiler.me - Magnet Opener</title>
 </head>
+
 <body>
 
     <div class="container">
-        <a style="text-decoration: none" id='magnetLink'><h1 id="linkText">:)</h1></a>
+        <a style="text-decoration: none" id='magnetLink'>
+            <h1 id="linkText">:)</h1>
+        </a>
         <input id="magnetInput" onclick="this.select()" data-tippy-content="Copied!"></input>
     </div>
 
@@ -20,17 +24,22 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const magnetBtn = document.getElementById('magnetLink');
+        const magnetInput = document.getElementById('magnetInput');
         const uri = urlParams.get('uri');
-        if (!uri || !uri.startsWith('magnet:')) 
-            document.getElementById('magnetInput').innerHTML = ":(";
-        else{
+        console.log(uri)
+        if (!uri || !uri.startsWith('magnet:')) {
+            document.getElementById('linkText').innerHTML = ":(";
+            magnetInput.style.visibility = 'hidden'
+        }
+        else {
             magnetBtn.href = uri;
             magnetBtn.click();
-            document.getElementById('magnetInput').value = decodeURIComponent(uri);
-            document.getElementById('magnetInput').setAttribute('data-clipboard-text', decodeURIComponent(uri));
+            magnetInput.value = decodeURIComponent(uri);
+            magnetInput.setAttribute('data-clipboard-text', decodeURIComponent(uri));
         }
         var clipboard = new ClipboardJS('#magnetInput');
-        tippy('#magnetInput', {trigger: 'click'})
+        tippy('#magnetInput', { trigger: 'click' })
     </script>
 </body>
+
 </html>
